@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+	<label>@ViewBag.Name</label>
+	<br />
+	@foreach (System.Security.Claims.Claim claim in ViewBag.Identity.Claims)
+	{
+		<h3>@claim.Type</h3>
+		<table>
+			<tr><td width='150px'>Value</td><td>@claim.Value</td></tr>
+			<tr><td>Value type</td><td>@claim.ValueType</td></tr>
+			<tr><td>Subject name</td><td>@claim.Subject.Name</td></tr>
+			<tr><td>Claim issuer</td><td>@claim.Issuer</td></tr>
+			<tr><td>Claim original issuer</td><td>@claim.OriginalIssuer</td></tr>
+		</table>
+		<br />
+	}
+</div>
